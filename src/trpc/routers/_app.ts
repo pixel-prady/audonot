@@ -14,7 +14,7 @@ export const appRouter = createTRPCRouter({
         email: "hello@gmail.com"
       }
     })
-    return { succcess: true, message: "Job queued" };
+    return { success: true, message: "Job queued" };
   }),
 });
 
