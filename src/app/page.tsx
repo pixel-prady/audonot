@@ -22,12 +22,21 @@ const page =  () => {
         }
     )); 
 
+    const testAi = useMutation(trpc.testAi.mutationOptions(
+        {
+
+        }
+    )) ; 
+
     return (
         <div className=" min-h-screen min-w-screen items-center flex justify-center flex-col gap-y-6">
             protected page component 
             <div>
                 {JSON.stringify(data,null,2)}
             </div>
+            <Button disabled={testAi.isPending} onClick={()=>{testAi.mutate()}}>
+                TestAI
+            </Button>
             <Button disabled={create.isPending} onClick={()=>create.mutate()}>
                 Create Workflow
             </Button>
